@@ -81,6 +81,7 @@ async def trade_status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     _, date_str = query.data.split("|")
     claim_date = datetime.strptime(date_str, "%d.%m.%Y")
+
     days_passed = (datetime.now() - claim_date).days
     remaining = TRADE_BAN_DAYS - days_passed
 
